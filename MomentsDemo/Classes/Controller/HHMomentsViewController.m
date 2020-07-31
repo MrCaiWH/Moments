@@ -1,23 +1,24 @@
 //
-//  ViewController.m
+//  HHMomentsViewController.m
 //  MomentsDemo
 //
 //  Created by 黄花菜 on 2020/7/31.
 //  Copyright © 2020 Cai. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HHMomentsViewController.h"
 
-@interface ViewController ()
+@interface HHMomentsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HHMomentsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor orangeColor];
 }
-
 
 @end
