@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F529CE924D45DEC00881FCB /* HHPhotoView.m */; };
+		4F529CEC24D4768A00881FCB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F529CEB24D4768A00881FCB /* data.json */; };
 		4F9FE00D24D44B9A000A21AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE00C24D44B9A000A21AF /* AppDelegate.m */; };
 		4F9FE01824D44B9C000A21AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FE01724D44B9C000A21AF /* Assets.xcassets */; };
 		4F9FE01B24D44B9D000A21AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FE01924D44B9D000A21AF /* LaunchScreen.storyboard */; };
 		4F9FE01E24D44B9D000A21AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE01D24D44B9D000A21AF /* main.m */; };
+		4FB45F4C24D45716002F332A /* HHMomentsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB45F4B24D45716002F332A /* HHMomentsTableView.m */; };
+		4FB45F4F24D4575C002F332A /* HHMomentsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB45F4E24D4575C002F332A /* HHMomentsTableViewCell.m */; };
 		4FD4B18424D4515A00948648 /* HHMomentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4B18324D4515A00948648 /* HHMomentsViewController.m */; };
 		4FD4B18724D4517200948648 /* HHMomentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4B18624D4517200948648 /* HHMomentsModel.m */; };
 		4FD4B18A24D4518500948648 /* HHMomentsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD4B18924D4518500948648 /* HHMomentsViewModel.m */; };
@@ -20,6 +24,9 @@
 /* Begin PBXFileReference section */
 		111792B6A827C9589AD7E29D /* Pods_MomentsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2E14984717511C9F77FB5 /* Pods-MomentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsDemo.release.xcconfig"; path = "Target Support Files/Pods-MomentsDemo/Pods-MomentsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4F529CE824D45DEC00881FCB /* HHPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPhotoView.h; sourceTree = "<group>"; };
+		4F529CE924D45DEC00881FCB /* HHPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPhotoView.m; sourceTree = "<group>"; };
+		4F529CEB24D4768A00881FCB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		4F9FE00824D44B9A000A21AF /* MomentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MomentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FE00B24D44B9A000A21AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9FE00C24D44B9A000A21AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -27,6 +34,10 @@
 		4F9FE01A24D44B9D000A21AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F9FE01C24D44B9D000A21AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F9FE01D24D44B9D000A21AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FB45F4A24D45716002F332A /* HHMomentsTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMomentsTableView.h; sourceTree = "<group>"; };
+		4FB45F4B24D45716002F332A /* HHMomentsTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMomentsTableView.m; sourceTree = "<group>"; };
+		4FB45F4D24D4575C002F332A /* HHMomentsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMomentsTableViewCell.h; sourceTree = "<group>"; };
+		4FB45F4E24D4575C002F332A /* HHMomentsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMomentsTableViewCell.m; sourceTree = "<group>"; };
 		4FD4B18224D4515A00948648 /* HHMomentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMomentsViewController.h; sourceTree = "<group>"; };
 		4FD4B18324D4515A00948648 /* HHMomentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMomentsViewController.m; sourceTree = "<group>"; };
 		4FD4B18524D4517200948648 /* HHMomentsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMomentsModel.h; sourceTree = "<group>"; };
@@ -76,6 +87,7 @@
 				4F9FE01924D44B9D000A21AF /* LaunchScreen.storyboard */,
 				4F9FE01C24D44B9D000A21AF /* Info.plist */,
 				4F9FE01D24D44B9D000A21AF /* main.m */,
+				4F529CEB24D4768A00881FCB /* data.json */,
 			);
 			path = MomentsDemo;
 			sourceTree = "<group>";
@@ -94,6 +106,12 @@
 		4FD4B17E24D4512200948648 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4FB45F4A24D45716002F332A /* HHMomentsTableView.h */,
+				4FB45F4B24D45716002F332A /* HHMomentsTableView.m */,
+				4FB45F4D24D4575C002F332A /* HHMomentsTableViewCell.h */,
+				4FB45F4E24D4575C002F332A /* HHMomentsTableViewCell.m */,
+				4F529CE824D45DEC00881FCB /* HHPhotoView.h */,
+				4F529CE924D45DEC00881FCB /* HHPhotoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9FE01B24D44B9D000A21AF /* LaunchScreen.storyboard in Resources */,
+				4F529CEC24D4768A00881FCB /* data.json in Resources */,
 				4F9FE01824D44B9C000A21AF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,10 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F9FE00D24D44B9A000A21AF /* AppDelegate.m in Sources */,
+				4FB45F4C24D45716002F332A /* HHMomentsTableView.m in Sources */,
 				4FD4B18424D4515A00948648 /* HHMomentsViewController.m in Sources */,
 				4FD4B18724D4517200948648 /* HHMomentsModel.m in Sources */,
 				4FD4B18A24D4518500948648 /* HHMomentsViewModel.m in Sources */,
+				4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */,
 				4F9FE01E24D44B9D000A21AF /* main.m in Sources */,
+				4FB45F4F24D4575C002F332A /* HHMomentsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,12 @@ target 'MomentsDemo' do
 
   # Pods for MomentsDemo
   
-  pod 'YTKNetwork'
-  pod 'MJExtension'
-  pod 'SVProgressHUD'
-  pod 'Masonry'
-  pod 'SDWebImage'
-  pod 'ReactiveObjC'
+  pod 'MJExtension',                      '3.2.2'
+  pod 'SVProgressHUD',                    '2.2.5'
+  pod 'Masonry',                          '1.1.0'
+  pod 'SDWebImage',                       '5.8.0'
+  pod 'ReactiveObjC',                     '3.1.1'
+  pod 'UITableView+FDTemplateLayoutCell', '1.6'
+  pod 'YYText'
   
 end

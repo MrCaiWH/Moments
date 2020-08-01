@@ -12,6 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HHMomentsModel : NSObject
 
+/** 头像 */
+@property (nonatomic, copy) NSString *icon;
+/** 姓名 */
+@property (nonatomic, copy) NSString *name;
+/** 内容 */
+@property (nonatomic, copy) NSString *content;
+/** 图片 */
+@property (nonatomic, strong) NSArray *photos;
+
 @end
 
 NS_ASSUME_NONNULL_END
