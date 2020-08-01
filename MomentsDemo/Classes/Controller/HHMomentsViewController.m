@@ -25,6 +25,8 @@
     
     self.view.backgroundColor = [UIColor orangeColor];
     
+    self.title = @"朋友圈";
+    
     [self.view addSubview:self.momentsTableView];
     
     [self.momentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F03604324D52E4A0010D46C /* HHMomentsLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03604224D52E4A0010D46C /* HHMomentsLayout.m */; };
+		4F03604724D53A760010D46C /* HHConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03604624D53A760010D46C /* HHConst.m */; };
 		4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F529CE924D45DEC00881FCB /* HHPhotoView.m */; };
 		4F529CEC24D4768A00881FCB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F529CEB24D4768A00881FCB /* data.json */; };
 		4F9FE00D24D44B9A000A21AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE00C24D44B9A000A21AF /* AppDelegate.m */; };
@@ -24,6 +26,10 @@
 /* Begin PBXFileReference section */
 		111792B6A827C9589AD7E29D /* Pods_MomentsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MomentsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF2E14984717511C9F77FB5 /* Pods-MomentsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MomentsDemo.release.xcconfig"; path = "Target Support Files/Pods-MomentsDemo/Pods-MomentsDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4F03604124D52E4A0010D46C /* HHMomentsLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHMomentsLayout.h; sourceTree = "<group>"; };
+		4F03604224D52E4A0010D46C /* HHMomentsLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHMomentsLayout.m; sourceTree = "<group>"; };
+		4F03604524D53A760010D46C /* HHConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHConst.h; sourceTree = "<group>"; };
+		4F03604624D53A760010D46C /* HHConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHConst.m; sourceTree = "<group>"; };
 		4F529CE824D45DEC00881FCB /* HHPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPhotoView.h; sourceTree = "<group>"; };
 		4F529CE924D45DEC00881FCB /* HHPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPhotoView.m; sourceTree = "<group>"; };
 		4F529CEB24D4768A00881FCB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
@@ -59,6 +65,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F03604424D53A150010D46C /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				4F03604524D53A760010D46C /* HHConst.h */,
+				4F03604624D53A760010D46C /* HHConst.m */,
+			);
+			path = Const;
+			sourceTree = "<group>";
+		};
 		4F9FDFFF24D44B9A000A21AF = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +110,7 @@
 		4FD4B17D24D450EF00948648 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4F03604424D53A150010D46C /* Const */,
 				4FD4B18024D4512D00948648 /* Controller */,
 				4FD4B18124D4512D00948648 /* Model */,
 				4FD4B17F24D4512D00948648 /* ViewModel */,
@@ -121,6 +137,8 @@
 			children = (
 				4FD4B18824D4518500948648 /* HHMomentsViewModel.h */,
 				4FD4B18924D4518500948648 /* HHMomentsViewModel.m */,
+				4F03604124D52E4A0010D46C /* HHMomentsLayout.h */,
+				4F03604224D52E4A0010D46C /* HHMomentsLayout.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -280,8 +298,10 @@
 				4FD4B18424D4515A00948648 /* HHMomentsViewController.m in Sources */,
 				4FD4B18724D4517200948648 /* HHMomentsModel.m in Sources */,
 				4FD4B18A24D4518500948648 /* HHMomentsViewModel.m in Sources */,
+				4F03604724D53A760010D46C /* HHConst.m in Sources */,
 				4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */,
 				4F9FE01E24D44B9D000A21AF /* main.m in Sources */,
+				4F03604324D52E4A0010D46C /* HHMomentsLayout.m in Sources */,
 				4FB45F4F24D4575C002F332A /* HHMomentsTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

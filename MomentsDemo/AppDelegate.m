@@ -21,8 +21,10 @@
     
     HHMomentsViewController *mainVC = [[HHMomentsViewController alloc] init];
     
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = mainVC;
+    self.window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
     return YES;

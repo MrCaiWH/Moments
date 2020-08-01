@@ -13,6 +13,6 @@ target 'MomentsDemo' do
   pod 'SDWebImage',                       '5.8.0'
   pod 'ReactiveObjC',                     '3.1.1'
   pod 'UITableView+FDTemplateLayoutCell', '1.6'
-  pod 'YYText'
+  pod 'YYText',                           '1.0.7'
   
 end

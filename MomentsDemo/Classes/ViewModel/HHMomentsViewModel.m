@@ -9,6 +9,7 @@
 #import "HHMomentsViewModel.h"
 #import <MJExtension/MJExtension.h>
 #import "HHMomentsModel.h"
+#import "HHMomentsLayout.h"
 
 @interface HHMomentsViewModel ()
 @property (nonatomic, strong, readwrite) NSMutableArray *dataArray;
@@ -32,7 +33,8 @@
     
     for (NSDictionary *dic in array) {
         HHMomentsModel *model = [HHMomentsModel mj_objectWithKeyValues:dic];
-        [self.dataArray addObject:model];
+        HHMomentsLayout *layout = [[HHMomentsLayout alloc] initWithMoment:model];
+        [self.dataArray addObject:layout];
     }
     
     NSLog(@"come here %@",self.dataArray);

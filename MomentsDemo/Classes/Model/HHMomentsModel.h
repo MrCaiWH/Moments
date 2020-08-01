@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *content;
 /** 图片 */
 @property (nonatomic, strong) NSArray *photos;
-
+/** 发布时间 */
+@property (nonatomic, copy) NSString *time;
 @end
 
 NS_ASSUME_NONNULL_END

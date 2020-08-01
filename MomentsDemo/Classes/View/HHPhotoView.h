@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HHPhotoView : UIView
 
+@property (nonatomic, strong) NSArray *photosArray;
+
 @end
 
 NS_ASSUME_NONNULL_END

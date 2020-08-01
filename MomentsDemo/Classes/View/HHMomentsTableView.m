@@ -10,7 +10,7 @@
 #import "HHMomentsViewModel.h"
 #import "HHMomentsTableViewCell.h"
 #import "HHMomentsModel.h"
-#import <UITableView_FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "HHMomentsLayout.h"
 
 @interface HHMomentsTableView ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) HHMomentsViewModel *viewModel;
@@ -26,8 +26,6 @@
         
         self.dataSource = self;
         self.delegate = self;
-
-        self.rowHeight = UITableViewAutomaticDimension;
         
         self.estimatedRowHeight = 0;
         self.estimatedSectionHeaderHeight = 0;
@@ -54,22 +52,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HHMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HHMomentsTableViewCell identifier] forIndexPath:indexPath];
-    HHMomentsModel *model = self.viewModel.dataArray[indexPath.row];
-    cell.model = model;
+    HHMomentsLayout *layout = self.viewModel.dataArray[indexPath.row];
+    cell.model = layout.moment;
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    @weakify(self)
-    return [tableView fd_heightForCellWithIdentifier:[HHMomentsTableViewCell identifier] cacheByIndexPath:indexPath configuration:^(id cell) {
-        @strongify(self)
-        [self configCell:cell atindex:indexPath];
-    }];
+    HHMomentsLayout *layout = self.viewModel.dataArray[indexPath.row];
+    return layout.height;
 }
 
--(void)configCell:(HHMomentsTableViewCell*)cell atindex:(NSIndexPath*)indexPath{
-    HHMomentsModel *model = self.viewModel.dataArray[indexPath.row];
-    cell.model = model;
-}
 @end
