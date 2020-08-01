@@ -60,18 +60,23 @@
     //计算文本尺寸
     
     if (self.moment.content) { //没有内容
-        CGFloat messageLableW = screenWidth - HHMargin * 4 - HHAvatarHeight;
+        
+        CGFloat messageLableW = screenWidth - nameLableX - HHMargin * 2;
 
         CGSize maxSize = CGSizeMake(messageLableW, MAXFLOAT);
+        
+        NSAttributedString *messageAtr = [self matchesAttributedString:self.moment.content];
+        
+        self.messageAttStr = messageAtr;
 
-        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:[self matchesAttributedString:self.moment.content]];
-        CGFloat introHeight = layout.textBoundingSize.height;
+        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:messageAtr];
+        CGFloat introHeight = layout.textBoundingSize.height + 40;
 
         //状态内容
         _height += introHeight + HHMargin;
 
         CGFloat messageLableX = nameLableX;
-        CGFloat messageLableY = CGRectGetMaxY(self.iconViewF) + HHMargin;;
+        CGFloat messageLableY = CGRectGetMaxY(self.nameLableF) + HHMargin;;
 
         self.messageLabelF = CGRectMake(messageLableX, messageLableY, messageLableW, introHeight);
     }
@@ -105,13 +110,12 @@
             photoContainerY = CGRectGetMaxY(self.messageLabelF) + HHMargin;
         }
         else {
-            photoContainerY = CGRectGetMaxY(self.iconViewF) + HHMargin;
+            photoContainerY = CGRectGetMaxY(self.nameLableF) + HHMargin;
         }
 
         self.photoContainerViewF = CGRectMake(photoContainerX, photoContainerY, photosW, photosH);
 
         _height += photosH + HHMargin;
-        
     }
     
     //时间
@@ -139,13 +143,12 @@
 }
 
 /// 设置行间距的NSAttributedString赋值给YYLabel
-- (NSAttributedString *)matchesAttributedString:(NSString *)str{
+- (NSAttributedString *)matchesAttributedString:(NSString *)str {
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:str];
-
     // 间距
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    [paragraphStyle setLineSpacing:5.0]; // 行间距假如是5
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+//    [paragraphStyle setLineSpacing:5.0]; // 行间距假如是5
+//    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [str length])];
     
     [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, attrStr.length)];

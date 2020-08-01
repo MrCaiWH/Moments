@@ -8,15 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class HHMomentsModel,HHMomentsLayout;
+@class HHMomentsLayout;
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HHMomentsTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) HHMomentsModel *model;
-
 @property (nonatomic, strong) HHMomentsLayout *layout;
+
 + (NSString *)identifier;
 @end
 

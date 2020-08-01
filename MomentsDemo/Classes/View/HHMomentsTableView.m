@@ -35,15 +35,10 @@
 
          self.separatorStyle = UITableViewCellSeparatorStyleNone;
          self.tableFooterView = [UIView new];
-        
-        [self bindViewModel];
     }
     return self;
 }
 
-- (void)bindViewModel {
-    
-}
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -53,7 +48,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HHMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HHMomentsTableViewCell identifier] forIndexPath:indexPath];
     HHMomentsLayout *layout = self.viewModel.dataArray[indexPath.row];
-    cell.model = layout.moment;
     cell.layout = layout;
     return cell;
 }

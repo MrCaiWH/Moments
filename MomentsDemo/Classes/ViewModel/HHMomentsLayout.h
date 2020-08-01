@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 // 总高度
 @property (nonatomic, assign) CGFloat height;
 
+@property (nonatomic, strong) NSAttributedString *messageAttStr;
+
 @end
 
 NS_ASSUME_NONNULL_END
