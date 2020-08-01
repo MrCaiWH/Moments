@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class HHMomentsModel;
+@class HHMomentsModel,HHMomentsLayout;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) HHMomentsModel *model;
 
+@property (nonatomic, strong) HHMomentsLayout *layout;
 + (NSString *)identifier;
 @end
 

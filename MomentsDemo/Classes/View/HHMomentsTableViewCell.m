@@ -13,6 +13,7 @@
 #import <SDWebImage/SDWebImage.h>
 #import <YYText/YYLabel.h>
 #import "HHConst.h"
+#import "HHMomentsLayout.h"
 
 @interface HHMomentsTableViewCell ()
 @property (nonatomic, strong) UIImageView *iconImageView;
@@ -20,6 +21,7 @@
 @property (nonatomic, strong) YYLabel *messageLabel;
 @property (nonatomic, strong) HHPhotoView *photoView;
 @property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UIView *dividerView;
 @end
 
 @implementation HHMomentsTableViewCell
@@ -29,7 +31,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         [self setUpSubViews];
-        [self setupConstraint];
+        
 
         self.backgroundColor = [UIColor colorWithRed:249/255.0 green:249/255.0 blue:251/255.0 alpha:1.0];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -43,40 +45,41 @@
     [self.contentView addSubview:self.messageLabel];
     [self.contentView addSubview:self.photoView];
     [self.contentView addSubview:self.timeLabel];
+    [self.contentView addSubview:self.dividerView];
 }
 
-- (void)setupConstraint {
-    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(HHMargin);
-        make.top.mas_equalTo(HHMargin);
-        make.width.height.mas_equalTo(HHAvatarHeight);
-    }];
-    
-    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.iconImageView.mas_right).offset(HHMargin);
-        make.top.mas_equalTo(HHMargin);
-        make.right.mas_equalTo(-HHMargin);
-    }];
-    
-    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
-        make.top.mas_equalTo(self.iconImageView.mas_bottom).offset(HHMargin);
-        make.right.mas_equalTo(-HHMargin*2);
-    }];
-    
-    [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
-        make.top.mas_equalTo(self.messageLabel.mas_bottom).offset(HHMargin);
-        make.right.mas_equalTo(-(HHMargin * 2 + HHAvatarHeight));
-    }];
-    
-    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
-        make.bottom.mas_equalTo(self.contentView).offset(-HHMargin);
-        make.right.mas_equalTo(-HHMargin);
-//        make.height.mas_equalTo(30);
-    }];
-}
+//- (void)setupConstraint {
+//    [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(HHMargin);
+//        make.top.mas_equalTo(HHMargin);
+//        make.width.height.mas_equalTo(HHAvatarHeight);
+//    }];
+//
+//    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(self.iconImageView.mas_right).offset(HHMargin);
+//        make.top.mas_equalTo(HHMargin);
+//        make.right.mas_equalTo(-HHMargin);
+//    }];
+//
+//    [self.messageLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
+//        make.top.mas_equalTo(self.iconImageView.mas_bottom).offset(HHMargin);
+//        make.right.mas_equalTo(-HHMargin*2);
+//    }];
+//
+//    [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
+//        make.top.mas_equalTo(self.messageLabel.mas_bottom).offset(HHMargin);
+//        make.right.mas_equalTo(-(HHMargin * 2 + HHAvatarHeight));
+//    }];
+//
+//    [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(HHMargin * 2 + HHAvatarHeight);
+//        make.bottom.mas_equalTo(self.contentView).offset(-HHMargin);
+//        make.right.mas_equalTo(-HHMargin);
+////        make.height.mas_equalTo(30);
+//    }];
+//}
 
 - (void)setModel:(HHMomentsModel *)model {
     _model = model;
@@ -86,10 +89,22 @@
     self.nameLabel.text = model.name;
     
     self.messageLabel.text = model.content;
-    
+//
     self.photoView.photosArray = model.photos;
-    
+//
     self.timeLabel.text = model.time;
+}
+
+- (void)setLayout:(HHMomentsLayout *)layout {
+    
+    _layout = layout;
+    
+    self.iconImageView.frame = layout.iconViewF;
+    self.nameLabel.frame = layout.nameLableF;
+    self.messageLabel.frame = layout.messageLabelF;
+    self.photoView.frame = layout.photoContainerViewF;
+    self.timeLabel.frame = layout.timeLabelF;
+    self.dividerView.frame = layout.dividerF;
 }
 
 #pragma mark - Lazy
@@ -138,6 +153,14 @@
         _timeLabel.textColor = [UIColor colorWithRed:(54/255.0) green:(71/255.0) blue:(121/255.0) alpha:0.9];
     }
     return _timeLabel;
+}
+
+- (UIView *)dividerView {
+    if (_dividerView == nil) {
+        _dividerView = [[UIView alloc] init];
+        _dividerView.backgroundColor = [UIColor grayColor];
+    }
+    return _dividerView;
 }
 
 + (NSString *)identifier {

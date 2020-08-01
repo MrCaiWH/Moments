@@ -19,6 +19,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) HHMomentsModel *moment;
 
+@property (nonatomic, assign, readonly) CGRect iconViewF;
+@property (nonatomic, assign, readonly) CGRect nameLableF;
+@property (nonatomic, assign, readonly) CGRect messageLabelF;
+@property (nonatomic, assign, readonly) CGRect photoContainerViewF;
+@property (nonatomic, assign, readonly) CGRect timeLabelF;
+@property (nonatomic, assign, readonly) CGRect dividerF;
+
 // 总高度
 @property (nonatomic, assign) CGFloat height;
 

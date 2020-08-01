@@ -54,6 +54,7 @@
     HHMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HHMomentsTableViewCell identifier] forIndexPath:indexPath];
     HHMomentsLayout *layout = self.viewModel.dataArray[indexPath.row];
     cell.model = layout.moment;
+    cell.layout = layout;
     return cell;
 }
 

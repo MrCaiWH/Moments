@@ -10,7 +10,25 @@
 #import "HHMomentsModel.h"
 #import "HHConst.h"
 
+@interface HHMomentsLayout ()
+@property (nonatomic, assign, readwrite) CGRect iconViewF;
+@property (nonatomic, assign, readwrite) CGRect nameLableF;
+@property (nonatomic, assign, readwrite) CGRect messageLabelF;
+@property (nonatomic, assign, readwrite) CGRect photoContainerViewF;
+@property (nonatomic, assign, readwrite) CGRect timeLabelF;
+@property (nonatomic, assign, readwrite) CGRect dividerF;
+@end
+
 @implementation HHMomentsLayout
+
+
+//三种情况
+
+//有照片，由内容
+
+//只有内容
+
+//只有照片
 
 - (instancetype)initWithMoment:(HHMomentsModel *)moment {
     self = [super init];
@@ -25,31 +43,99 @@
     // 计算高度
     _height = 0;
     
-    //头像
-    _height += HHMargin + HHAvatarHeight;
-    
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     
-    //计算文本尺寸
-    CGSize maxSize = CGSizeMake(screenWidth - HHMargin * 4 - HHAvatarHeight, MAXFLOAT);
+    //头像
+    self.iconViewF = CGRectMake(HHMargin, HHMargin, HHAvatarHeight, HHAvatarHeight);
     
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:[self matchesAttributedString:self.moment.content]];
-    CGFloat introHeight = layout.textBoundingSize.height;
+    _height += HHMargin + HHAvatarHeight;
     
-    //状态内容
-    _height += introHeight + HHMargin;
+    //姓名
+    CGFloat nameLableX = CGRectGetMaxX(self.iconViewF) + HHMargin;
+    CGFloat nameLableW = screenWidth - nameLableX - HHMargin;
     
-    CGFloat leftMargin = HHMargin * 2 + HHAvatarHeight;
-    
-    CGFloat photosWidth = screenWidth - (HHMargin * 2 + HHAvatarHeight) - leftMargin;
-    
-    CGFloat imageHeight = (photosWidth - 2 * HHMargin)/3;
+    self.nameLableF = CGRectMake(nameLableX, HHMargin, nameLableW, 20);
 
-    //九宫图
-    _height += imageHeight + HHMargin;
+    
+    //计算文本尺寸
+    
+    if (self.moment.content) { //没有内容
+        CGFloat messageLableW = screenWidth - HHMargin * 4 - HHAvatarHeight;
+
+        CGSize maxSize = CGSizeMake(messageLableW, MAXFLOAT);
+
+        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:[self matchesAttributedString:self.moment.content]];
+        CGFloat introHeight = layout.textBoundingSize.height;
+
+        //状态内容
+        _height += introHeight + HHMargin;
+
+        CGFloat messageLableX = nameLableX;
+        CGFloat messageLableY = CGRectGetMaxY(self.iconViewF) + HHMargin;;
+
+        self.messageLabelF = CGRectMake(messageLableX, messageLableY, messageLableW, introHeight);
+    }
     
     //九宫图
+    
+    if (self.moment.photos) { //没有照片
+        CGFloat leftMargin = HHMargin * 2 + HHAvatarHeight;
+
+        CGFloat photosW = screenWidth - leftMargin * 2;
+        
+        CGFloat imageW = (photosW - HHMargin * 2)/3;
+        
+        CGFloat photosH = 0;
+        
+        if (self.moment.photos.count > 6) {
+            photosH = photosW;
+        }
+        else if (self.moment.photos.count > 3) {
+            photosH = imageW * 2 + HHMargin;
+        }
+        else {
+             photosH = imageW;
+        }
+
+        CGFloat photoContainerX = leftMargin;
+        
+        CGFloat photoContainerY = 0;
+        
+        if (self.moment.content) { //没有内容
+            photoContainerY = CGRectGetMaxY(self.messageLabelF) + HHMargin;
+        }
+        else {
+            photoContainerY = CGRectGetMaxY(self.iconViewF) + HHMargin;
+        }
+
+        self.photoContainerViewF = CGRectMake(photoContainerX, photoContainerY, photosW, photosH);
+
+        _height += photosH + HHMargin;
+        
+    }
+    
+    //时间
     _height += 30 + HHMargin;
+    
+    CGFloat timeLabelY = 0;
+    
+    if (!self.moment.photos) { //没有照片
+        timeLabelY = CGRectGetMaxY(self.messageLabelF) + HHMargin;
+    }
+    else {
+        timeLabelY = CGRectGetMaxY(self.photoContainerViewF) + HHMargin;
+    }
+    
+     CGFloat timeLabelX = HHMargin * 2 + HHAvatarHeight;
+    
+    self.timeLabelF = CGRectMake(timeLabelX, timeLabelY, nameLableW, 30);
+    
+    CGFloat dividerY = CGRectGetMaxY(self.timeLabelF) + HHMargin;
+    
+    self.dividerF = CGRectMake(0, dividerY, screenWidth, 0.5);
+    
+    //时间
+    _height += HHMargin;
 }
 
 /// 设置行间距的NSAttributedString赋值给YYLabel

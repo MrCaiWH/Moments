@@ -13,7 +13,11 @@
 @implementation HHPhotoView
 
 - (void)setPhotosArray:(NSArray *)photosArray {
+    
     _photosArray = photosArray;
+    
+    //解决复用问题
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     
