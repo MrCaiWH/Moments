@@ -41,8 +41,6 @@
             }
         });
     });
-    
-    NSLog(@"come here %@",self.dataArray);
 }
 
 - (NSDictionary *)getJsonData {
