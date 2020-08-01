@@ -30,6 +30,8 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
+        NSLog(@"come here  111");
+        
         NSDictionary *dic = [self getJsonData];
         NSArray *array = dic[@"data"];
         
@@ -38,8 +40,16 @@
             HHMomentsLayout *layout = [[HHMomentsLayout alloc] initWithMoment:model];
             [self.dataArray addObject:layout];
         }
-
+        
+        //数据太少，多造点数据
+        for (int i = 0; i < 15; ++i) {
+            [self.dataArray addObjectsFromArray:self.dataArray];
+        }
+        
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"come here 222");
+            
             if (complete) {
                 complete();
             }

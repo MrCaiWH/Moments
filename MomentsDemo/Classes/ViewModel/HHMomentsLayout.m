@@ -21,7 +21,6 @@
 
 @implementation HHMomentsLayout
 
-
 //三种情况
 
 //有照片，由内容
@@ -84,6 +83,7 @@
     //九宫图
     
     if (self.moment.photos) { //没有照片
+        
         CGFloat leftMargin = HHMargin * 2 + HHAvatarHeight;
 
         CGFloat photosW = screenWidth - leftMargin * 2;
@@ -112,10 +112,16 @@
         else {
             photoContainerY = CGRectGetMaxY(self.nameLableF) + HHMargin;
         }
-
-        self.photoContainerViewF = CGRectMake(photoContainerX, photoContainerY, photosW, photosH);
-
-        _height += photosH + HHMargin;
+        
+        //只有一张图片
+        if (self.moment.photos.count == 1) {
+            self.photoContainerViewF = CGRectMake(photoContainerX, photoContainerY, photosW * 2, photosH * 2);
+            _height += photosH * 2 + HHMargin;
+        }
+        else {
+            self.photoContainerViewF = CGRectMake(photoContainerX, photoContainerY, photosW, photosH);
+            _height += photosH + HHMargin;
+        }
     }
     
     //时间

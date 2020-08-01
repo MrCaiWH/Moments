@@ -39,6 +39,10 @@
         imageView.frame = CGRectMake(x,y,imageWidth, imageHeight);
         
         [self addSubview:imageView];
+        
+        if (photosArray.count == 1) {
+            imageView.frame = CGRectMake(x,y,imageWidth * 2, imageHeight * 2);
+        }
     }
 }
 

@@ -54,12 +54,7 @@
     
     self.nameLabel.text = moment.name;
     
-//    self.messageTextView.text = moment.content;
-    
     if (moment.content) {
-//        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-//        paragraphStyle.lineSpacing = 5;// 字体的行间距
-//        NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:15],NSParagraphStyleAttributeName:paragraphStyle};
         self.messageTextView.attributedText = self.layout.messageAttStr;
     }
 
@@ -115,7 +110,6 @@
 - (HHPhotoView *)photoView {
     if (_photoView == nil) {
         _photoView = [[HHPhotoView alloc] init];
-//        _photoView.backgroundColor = [UIColor redColor];
     }
     return _photoView;
 }
@@ -132,7 +126,6 @@
 - (UIView *)dividerView {
     if (_dividerView == nil) {
         _dividerView = [[UIView alloc] init];
-//        _dividerView.backgroundColor = [UIColor grayColor];
         _dividerView.backgroundColor = [UIColor grayColor];
         _dividerView.alpha = 0.3;
     }
