@@ -17,6 +17,9 @@
 @property (nonatomic, assign, readwrite) CGRect photoContainerViewF;
 @property (nonatomic, assign, readwrite) CGRect timeLabelF;
 @property (nonatomic, assign, readwrite) CGRect dividerF;
+
+@property (nonatomic, assign, readwrite) CGFloat height;
+@property (nonatomic, strong, readwrite) NSAttributedString *messageAttStr;
 @end
 
 @implementation HHMomentsLayout
@@ -69,7 +72,7 @@
         self.messageAttStr = messageAtr;
 
         YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:messageAtr];
-        CGFloat introHeight = layout.textBoundingSize.height + 40;
+        CGFloat introHeight = layout.textBoundingSize.height + HHMargin;
 
         //状态内容
         _height += introHeight + HHMargin;

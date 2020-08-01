@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) HHMomentsModel *moment;
 
+//子控件frame
 @property (nonatomic, assign, readonly) CGRect iconViewF;
 @property (nonatomic, assign, readonly) CGRect nameLableF;
 @property (nonatomic, assign, readonly) CGRect messageLabelF;
@@ -27,9 +28,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) CGRect dividerF;
 
 // 总高度
-@property (nonatomic, assign) CGFloat height;
+@property (nonatomic, assign, readonly) CGFloat height;
 
-@property (nonatomic, strong) NSAttributedString *messageAttStr;
+//内容富文本
+@property (nonatomic, strong, readonly) NSAttributedString *messageAttStr;
 
 @end
 

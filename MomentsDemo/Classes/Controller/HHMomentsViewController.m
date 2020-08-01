@@ -10,6 +10,7 @@
 #import "HHMomentsTableView.h"
 #import "HHMomentsViewModel.h"
 #import <Masonry/Masonry.h>
+#import <YBImageBrowser/YBImageBrowser.h>
 
 @interface HHMomentsViewController ()
 @property (nonatomic, strong) HHMomentsTableView *momentsTableView;

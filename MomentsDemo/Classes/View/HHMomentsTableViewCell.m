@@ -98,6 +98,7 @@
 - (UITextView *)messageTextView {
     if (_messageTextView == nil) {
         _messageTextView = [[UITextView alloc] init];
+        _messageTextView.backgroundColor = [UIColor clearColor];
         _messageTextView.scrollEnabled = NO;
         //禁止编辑
         _messageTextView.editable = NO;

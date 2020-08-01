@@ -17,21 +17,10 @@
 
 @implementation HHMomentsViewModel
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-//        [self loadData];
-    }
-    return self;
-}
-
 - (void)loadData:(completeBlock)complete {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        NSLog(@"come here  111");
-        
+
         NSDictionary *dic = [self getJsonData];
         NSArray *array = dic[@"data"];
         
@@ -47,9 +36,6 @@
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            
-            NSLog(@"come here 222");
-            
             if (complete) {
                 complete();
             }
@@ -70,7 +56,6 @@
 
     return dic;
 }
-
 
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
