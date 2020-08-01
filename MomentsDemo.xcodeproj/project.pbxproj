@@ -33,7 +33,7 @@
 		4F529CE824D45DEC00881FCB /* HHPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPhotoView.h; sourceTree = "<group>"; };
 		4F529CE924D45DEC00881FCB /* HHPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPhotoView.m; sourceTree = "<group>"; };
 		4F529CEB24D4768A00881FCB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		4F9FE00824D44B9A000A21AF /* MomentsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MomentsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F9FE00824D44B9A000A21AF /* AIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FE00B24D44B9A000A21AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9FE00C24D44B9A000A21AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4F9FE01724D44B9C000A21AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		4F9FE00924D44B9A000A21AF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4F9FE00824D44B9A000A21AF /* MomentsDemo.app */,
+				4F9FE00824D44B9A000A21AF /* AIO.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			);
 			name = MomentsDemo;
 			productName = MomentsDemo;
-			productReference = 4F9FE00824D44B9A000A21AF /* MomentsDemo.app */;
+			productReference = 4F9FE00824D44B9A000A21AF /* AIO.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -444,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cai.MomentsDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AIO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -463,7 +463,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cai.MomentsDemo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AIO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

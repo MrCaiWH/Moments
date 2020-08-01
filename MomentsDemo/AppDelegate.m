@@ -20,7 +20,6 @@
     // Override point for customization after application launch.
     
     HHMomentsViewController *mainVC = [[HHMomentsViewController alloc] init];
-    
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:mainVC];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
