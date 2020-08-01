@@ -21,21 +21,30 @@
 {
     self = [super init];
     if (self) {
-        [self test];
+//        [self loadData];
     }
     return self;
 }
 
-- (void)test {
+- (void)loadData:(completeBlock)complete {
     
-    NSDictionary *dic = [self getJsonData];
-    NSArray *array = dic[@"data"];
-    
-    for (NSDictionary *dic in array) {
-        HHMomentsModel *model = [HHMomentsModel mj_objectWithKeyValues:dic];
-        HHMomentsLayout *layout = [[HHMomentsLayout alloc] initWithMoment:model];
-        [self.dataArray addObject:layout];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSDictionary *dic = [self getJsonData];
+        NSArray *array = dic[@"data"];
+        
+        for (NSDictionary *dic in array) {
+            HHMomentsModel *model = [HHMomentsModel mj_objectWithKeyValues:dic];
+            HHMomentsLayout *layout = [[HHMomentsLayout alloc] initWithMoment:model];
+            [self.dataArray addObject:layout];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (complete) {
+                complete();
+            }
+        });
+    });
     
     NSLog(@"come here %@",self.dataArray);
 }

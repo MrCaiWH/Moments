@@ -32,6 +32,12 @@
     [self.momentsTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.insets(UIEdgeInsetsZero);
     }];
+    
+    __weak typeof(self) weakSelf = self;
+    [self.momentsViewModel loadData:^{
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf.momentsTableView reloadData];
+    }];
 }
 
 #pragma mark - Lazy

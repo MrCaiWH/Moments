@@ -14,6 +14,7 @@
 #import <YYText/YYLabel.h>
 #import "HHConst.h"
 #import "HHMomentsLayout.h"
+#import <ZYCornerRadius/UIImageView+CornerRadius.h>
 
 @interface HHMomentsTableViewCell ()
 @property (nonatomic, strong) UIImageView *iconImageView;
@@ -82,11 +83,10 @@
 }
 
 #pragma mark - Lazy
-
 - (UIImageView *)iconImageView {
     if (_iconImageView == nil) {
         _iconImageView = [[UIImageView alloc] init];
-//        _iconImageView.backgroundColor = [UIColor redColor];
+        [_iconImageView zy_cornerRadiusAdvance:4 rectCornerType:UIRectCornerAllCorners];
     }
     return _iconImageView;
 }

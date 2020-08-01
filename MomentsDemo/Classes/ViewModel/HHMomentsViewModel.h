@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <ReactiveObjC/ReactiveObjC.h>
+
+typedef void (^completeBlock)(void);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface HHMomentsViewModel : NSObject
+
+- (void)loadData:(completeBlock)complete;
 
 @property (nonatomic, strong, readonly) NSMutableArray *dataArray;
 
