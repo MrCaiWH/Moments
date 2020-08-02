@@ -12,6 +12,7 @@ target 'MomentsDemo' do
   pod 'SDWebImage',                       '5.8.0'
   pod 'YYText',                           '1.0.7'
   pod 'ZYCornerRadius',                   '~> 1.0.2'
-  pod 'YBImageBrowser'
-#  pod 'SJAttributesFactory'
+  pod 'ReactiveObjC',                     '3.1.1'
+  pod 'YBImageBrowser',                   '3.0.9'
+  pod 'SVProgressHUD',                    '2.2.5'
 end

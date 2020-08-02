@@ -11,6 +11,8 @@
 #import "HHMomentsViewModel.h"
 #import <Masonry/Masonry.h>
 #import <YBImageBrowser/YBImageBrowser.h>
+#import "HHWebViewViewController.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface HHMomentsViewController ()
 @property (nonatomic, strong) HHMomentsTableView *momentsTableView;
@@ -38,6 +40,23 @@
     [self.momentsViewModel loadData:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         [strongSelf.momentsTableView reloadData];
+    }];
+    
+    [self subscribe];
+}
+
+- (void)subscribe {
+    @weakify(self)
+    [self.momentsViewModel.textLinkSubject subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        if ([x isKindOfClass:[NSString class]]) {
+            HHWebViewViewController *h5VC = [[HHWebViewViewController alloc] init];
+            h5VC.urlStr = x;
+            [self.navigationController pushViewController:h5VC animated:YES];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:@"参数非法"];
+        }
     }];
 }
 

@@ -11,6 +11,7 @@
 		4F03604724D53A760010D46C /* HHConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F03604624D53A760010D46C /* HHConst.m */; };
 		4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F529CE924D45DEC00881FCB /* HHPhotoView.m */; };
 		4F529CEC24D4768A00881FCB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F529CEB24D4768A00881FCB /* data.json */; };
+		4F93ECAD24D6940500440965 /* HHWebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F93ECAC24D6940500440965 /* HHWebViewViewController.m */; };
 		4F9FE00D24D44B9A000A21AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9FE00C24D44B9A000A21AF /* AppDelegate.m */; };
 		4F9FE01824D44B9C000A21AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FE01724D44B9C000A21AF /* Assets.xcassets */; };
 		4F9FE01B24D44B9D000A21AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9FE01924D44B9D000A21AF /* LaunchScreen.storyboard */; };
@@ -33,6 +34,8 @@
 		4F529CE824D45DEC00881FCB /* HHPhotoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPhotoView.h; sourceTree = "<group>"; };
 		4F529CE924D45DEC00881FCB /* HHPhotoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHPhotoView.m; sourceTree = "<group>"; };
 		4F529CEB24D4768A00881FCB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		4F93ECAB24D6940500440965 /* HHWebViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHWebViewViewController.h; sourceTree = "<group>"; };
+		4F93ECAC24D6940500440965 /* HHWebViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHWebViewViewController.m; sourceTree = "<group>"; };
 		4F9FE00824D44B9A000A21AF /* AIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AIO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9FE00B24D44B9A000A21AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4F9FE00C24D44B9A000A21AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 			children = (
 				4FD4B18224D4515A00948648 /* HHMomentsViewController.h */,
 				4FD4B18324D4515A00948648 /* HHMomentsViewController.m */,
+				4F93ECAB24D6940500440965 /* HHWebViewViewController.h */,
+				4F93ECAC24D6940500440965 /* HHWebViewViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				4FD4B18424D4515A00948648 /* HHMomentsViewController.m in Sources */,
 				4FD4B18724D4517200948648 /* HHMomentsModel.m in Sources */,
 				4FD4B18A24D4518500948648 /* HHMomentsViewModel.m in Sources */,
+				4F93ECAD24D6940500440965 /* HHWebViewViewController.m in Sources */,
 				4F03604724D53A760010D46C /* HHConst.m in Sources */,
 				4F529CEA24D45DEC00881FCB /* HHPhotoView.m in Sources */,
 				4F9FE01E24D44B9D000A21AF /* main.m in Sources */,

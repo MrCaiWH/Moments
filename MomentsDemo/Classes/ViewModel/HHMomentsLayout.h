@@ -33,6 +33,8 @@ NS_ASSUME_NONNULL_BEGIN
 //内容富文本
 @property (nonatomic, strong, readonly) NSAttributedString *messageAttStr;
 
+@property (nonatomic, copy) void(^textLinkBlock)(void);
+
 @end
 
 NS_ASSUME_NONNULL_END

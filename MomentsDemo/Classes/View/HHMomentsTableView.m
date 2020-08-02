@@ -49,6 +49,12 @@
     HHMomentsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[HHMomentsTableViewCell identifier] forIndexPath:indexPath];
     HHMomentsLayout *layout = self.viewModel.dataArray[indexPath.row];
     cell.layout = layout;
+    @weakify(self)
+    cell.textLinkBlock = ^{
+         @strongify(self)
+        [self.viewModel.textLinkSubject sendNext:layout.moment.textlink];
+    };
+    
     return cell;
 }
 

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSArray *photos;
 /** 发布时间 */
 @property (nonatomic, copy) NSString *time;
+/** 超链接 */
+@property (nonatomic, copy) NSString *textlink;
 @end
 
 NS_ASSUME_NONNULL_END

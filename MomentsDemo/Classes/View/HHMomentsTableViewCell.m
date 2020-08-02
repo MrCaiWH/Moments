@@ -19,7 +19,7 @@
 @interface HHMomentsTableViewCell ()
 @property (nonatomic, strong) UIImageView *iconImageView;
 @property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UITextView *messageTextView;
+@property (nonatomic, strong) YYLabel *messageLabel;
 @property (nonatomic, strong) HHPhotoView *photoView;
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIView *dividerView;
@@ -42,7 +42,7 @@
 - (void)setUpSubViews {
     [self.contentView addSubview:self.iconImageView];
     [self.contentView addSubview:self.nameLabel];
-    [self.contentView addSubview:self.messageTextView];
+    [self.contentView addSubview:self.messageLabel];
     [self.contentView addSubview:self.photoView];
     [self.contentView addSubview:self.timeLabel];
     [self.contentView addSubview:self.dividerView];
@@ -55,7 +55,11 @@
     self.nameLabel.text = moment.name;
     
     if (moment.content) {
-        self.messageTextView.attributedText = self.layout.messageAttStr;
+        self.messageLabel.attributedText = self.layout.messageAttStr;
+        
+        if (moment.textlink) {
+            self.layout.textLinkBlock = self.textLinkBlock;
+        }
     }
 
     self.photoView.photosArray = moment.photos;
@@ -71,7 +75,7 @@
     
     self.iconImageView.frame = layout.iconViewF;
     self.nameLabel.frame = layout.nameLableF;
-    self.messageTextView.frame = layout.messageLabelF;
+    self.messageLabel.frame = layout.messageLabelF;
     self.photoView.frame = layout.photoContainerViewF;
     self.timeLabel.frame = layout.timeLabelF;
     self.dividerView.frame = layout.dividerF;
@@ -95,17 +99,12 @@
     return _nameLabel;
 }
 
-- (UITextView *)messageTextView {
-    if (_messageTextView == nil) {
-        _messageTextView = [[UITextView alloc] init];
-        _messageTextView.backgroundColor = [UIColor clearColor];
-        _messageTextView.scrollEnabled = NO;
-        //禁止编辑
-        _messageTextView.editable = NO;
-        //设置需要识别的类型，这设置的是全部
-        _messageTextView.dataDetectorTypes = UIDataDetectorTypeAll;
+- (YYLabel *)messageLabel {
+    if (_messageLabel == nil) {
+        _messageLabel = [[YYLabel alloc] init];
+        _messageLabel.numberOfLines = 0;
     }
-    return _messageTextView;
+    return _messageLabel;
 }
 
 - (HHPhotoView *)photoView {

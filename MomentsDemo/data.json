@@ -6,6 +6,7 @@
       "icon": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596220735491&di=47db8f10de220ab4cd26bed2276d8a42&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201410%2F09%2F20141009224754_AswrQ.jpeg",
       "name": "张三",
       "content": "https://www.baidu.com  文字带连接，还带图片",
+      "textlink": "https://www.baidu.com",
       "time": "1分钟前",
       "photos": [
         "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1027245443,3552957153&fm=26&gp=0.jpg",

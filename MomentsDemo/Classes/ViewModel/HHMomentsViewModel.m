@@ -13,6 +13,8 @@
 
 @interface HHMomentsViewModel ()
 @property (nonatomic, strong, readwrite) NSMutableArray *dataArray;
+
+@property (nonatomic, strong, readwrite) RACSubject *textLinkSubject;
 @end
 
 @implementation HHMomentsViewModel
@@ -53,6 +55,14 @@
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
 
     return dic;
+}
+
+#pragma mark - Lazy
+- (RACSubject *)textLinkSubject {
+    if (_textLinkSubject == nil) {
+        _textLinkSubject = [[RACSubject alloc] init];
+    }
+    return _textLinkSubject;
 }
 
 - (NSMutableArray *)dataArray {

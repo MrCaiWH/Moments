@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveObjC/ReactiveObjC.h>
 
 typedef void (^completeBlock)(void);
 
@@ -17,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loadData:(completeBlock)complete;
 
 @property (nonatomic, strong, readonly) NSMutableArray *dataArray;
+
+@property (nonatomic, strong, readonly) RACSubject *textLinkSubject;
 
 @end
 

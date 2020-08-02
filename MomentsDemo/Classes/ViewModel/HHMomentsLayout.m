@@ -67,26 +67,12 @@
 
         CGSize maxSize = CGSizeMake(messageLableW, MAXFLOAT);
         
-        NSAttributedString *messageAtr = [self matchesAttributedString:self.moment.content];
+        NSAttributedString *messageAtr = [self matchesAttributedString:self.moment.content textLink:self.moment.textlink];
         
         self.messageAttStr = messageAtr;
 
-        NSMutableParagraphStyle *npgStyle = [[NSMutableParagraphStyle alloc] init];
-        npgStyle.lineSpacing = 5;
-        
-        NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor darkGrayColor],NSParagraphStyleAttributeName:npgStyle};
-
-        
-        NSString *displayStr = [self.moment.content stringByAppendingString:@"\n"];
-        
-        CGFloat height = [displayStr boundingRectWithSize:maxSize
-                                                         options:\
-        NSStringDrawingTruncatesLastVisibleLine |
-        NSStringDrawingUsesLineFragmentOrigin |
-        NSStringDrawingUsesFontLeading
-        attributes:attr context:nil].size.height;
-            
-        CGFloat introHeight = height;
+        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:messageAtr];
+        CGFloat introHeight = layout.textBoundingSize.height + HHMargin;
 
         //状态内容
         _height += introHeight + HHMargin;
@@ -166,16 +152,29 @@
 }
 
 /// 设置行间距的NSAttributedString赋值给YYLabel
-- (NSAttributedString *)matchesAttributedString:(NSString *)str {
-    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:str];
+- (NSAttributedString *)matchesAttributedString:(NSString *)content textLink:(NSString *)textLink {
+
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:content];
+    
     // 间距
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-//    [paragraphStyle setLineSpacing:5.0]; // 行间距假如是5
-//    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [str length])];
+    [paragraphStyle setLineSpacing:5.0]; // 行间距假如是5
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    [attrStr addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [content length])];
     
     [attrStr addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0, attrStr.length)];
     [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, attrStr.length)];
+    
+    if (textLink) {
+        NSRange range = [content rangeOfString:textLink];
+        __weak typeof(self) weakSelf = self;
+        [attrStr yy_setTextHighlightRange:range color:[UIColor blueColor] backgroundColor:[UIColor clearColor] tapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            if (strongSelf.textLinkBlock) {
+                strongSelf.textLinkBlock();
+            }
+        }];
+    }
 
     return attrStr;
 }
