@@ -13,4 +13,5 @@ target 'MomentsDemo' do
   pod 'YYText',                           '1.0.7'
   pod 'ZYCornerRadius',                   '~> 1.0.2'
   pod 'YBImageBrowser'
+#  pod 'SJAttributesFactory'
 end

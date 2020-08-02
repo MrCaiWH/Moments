@@ -71,8 +71,22 @@
         
         self.messageAttStr = messageAtr;
 
-        YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:maxSize text:messageAtr];
-        CGFloat introHeight = layout.textBoundingSize.height + HHMargin;
+        NSMutableParagraphStyle *npgStyle = [[NSMutableParagraphStyle alloc] init];
+        npgStyle.lineSpacing = 5;
+        
+        NSDictionary *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:15],NSForegroundColorAttributeName:[UIColor darkGrayColor],NSParagraphStyleAttributeName:npgStyle};
+
+        
+        NSString *displayStr = [self.moment.content stringByAppendingString:@"\n"];
+        
+        CGFloat height = [displayStr boundingRectWithSize:maxSize
+                                                         options:\
+        NSStringDrawingTruncatesLastVisibleLine |
+        NSStringDrawingUsesLineFragmentOrigin |
+        NSStringDrawingUsesFontLeading
+        attributes:attr context:nil].size.height;
+            
+        CGFloat introHeight = height;
 
         //状态内容
         _height += introHeight + HHMargin;
