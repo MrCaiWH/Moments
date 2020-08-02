@@ -16,9 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) HHMomentsLayout *layout;
 
-@property (nonatomic, copy) void(^textLinkBlock)(void);
-
-
 + (NSString *)identifier;
 @end
 

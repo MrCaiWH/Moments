@@ -10,7 +10,7 @@
 #import <WebKit/WebKit.h>
 
 @interface HHWebViewViewController ()
-//@property (nonatomic, weak) WKWebView *webView;
+
 @end
 
 @implementation HHWebViewViewController
@@ -25,8 +25,6 @@
     WKWebView *view = [[WKWebView alloc] initWithFrame:self.view.frame];
     [view loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlStr]]];
     [self.view addSubview:view];
-//    self.webView = view;
-
 }
 
 @end

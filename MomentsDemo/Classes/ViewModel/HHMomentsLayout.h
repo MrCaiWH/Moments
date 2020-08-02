@@ -33,6 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 //内容富文本
 @property (nonatomic, strong, readonly) NSAttributedString *messageAttStr;
 
+//点击富文本block处理
 @property (nonatomic, copy) void(^textLinkBlock)(void);
 
 @end

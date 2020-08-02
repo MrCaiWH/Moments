@@ -56,10 +56,6 @@
     
     if (moment.content) {
         self.messageLabel.attributedText = self.layout.messageAttStr;
-        
-        if (moment.textlink) {
-            self.layout.textLinkBlock = self.textLinkBlock;
-        }
     }
 
     self.photoView.photosArray = moment.photos;

@@ -17,7 +17,8 @@
     {
       "icon": "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596297551005&di=a3f0c7fc84e0cb42db840e52aafcc36a&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201707%2F15%2F20170715151407_TENtB.thumb.700_0.jpeg",
       "name": "张三",
-      "content": "https://www.baidu.com  文字带连接，不带图片",
+      "content": "http://www.aiotoolbox.com  文字带连接，不带图片，哎呀，不错哦",
+      "textlink": "http://www.aiotoolbox.com",
       "time": "10分钟前"
     },
     {
